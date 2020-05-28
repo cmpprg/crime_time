@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 2.5.3
 addons:
-  postgresql: 12.3
+  postgresql: 9.6
   chrome: stable
 before_install:
 - yes | gem update --system --force
