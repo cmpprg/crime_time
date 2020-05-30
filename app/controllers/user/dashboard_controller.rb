@@ -1,4 +1,4 @@
-class User::DashboardController < ApplicationController
+class User::DashboardController < User::BaseController
   def show
 
   end
