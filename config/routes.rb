@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :user do
     get '/dashboard', to: 'dashboard#show'
-    get '/register_state', to: 'register#edit'
+    get '/register_state/:id/edit', to: 'register#edit'
+    patch '/register_state/:id', to: 'register#update'
   end
 end

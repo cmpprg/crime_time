@@ -1,0 +1,6 @@
+<h2>Please select your current state of residence from the dropdown below</h2>
+
+<%= form_tag "/user/register_state/#{current_user.id}", method: :patch do %>
+  <%= select_tag :state, options_for_select(us_states) %>
+  <%= submit_tag "Submit" %>
+<% end %>

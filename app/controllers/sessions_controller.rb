@@ -1,10 +1,13 @@
 class SessionsController < ApplicationController
   def create
-    if User.find_by(uid: gather_uid)
+    user = User.find_by(uid: gather_uid)
+    if user
+      session[:user_id] = user.id
       redirect_to '/user/dashboard'
     else
-      User.create(user_params)
-      redirect_to '/user/register_state'
+      new_user = User.create(user_params)
+      session[:user_id] = new_user.id
+      redirect_to "/user/register_state/#{new_user.id}/edit"
     end
   end
 

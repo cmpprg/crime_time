@@ -25,7 +25,7 @@ RSpec.describe "As a visitor" do
       expect(user.first_name).to eq("Michael")
       expect(user.last_name).to eq("Scott")
 
-      expect(current_path).to eq('/user/register_state')
+      expect(current_path).to eq("/user/register_state/#{user.id}/edit")
     end
     it "as a registered user" do
       User.create(uid: "12345",
@@ -37,6 +37,23 @@ RSpec.describe "As a visitor" do
 
       click_on 'Login with Google'
 
+      expect(current_path).to eq('/user/dashboard')
+    end
+    it "And can fill in form to provide current state as first time user" do
+      visit '/'
+      click_on 'Login with Google'
+      user = User.last
+
+      expect(current_path).to eq("/user/register_state/#{user.id}/edit")
+      expect(user.state).to eq(nil)
+      expect(page).to have_content("Please select your current state of residence from the dropdown below")
+
+      select "Colorado", from: :state
+
+      click_on "Submit"
+      user.reload
+
+      expect(user.state).to eq("CO")
       expect(current_path).to eq('/user/dashboard')
     end
   end
