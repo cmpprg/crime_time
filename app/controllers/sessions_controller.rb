@@ -1,7 +1,11 @@
 class SessionsController < ApplicationController
   def create
-    User.create(user_params)
-    redirect_to '/user/dashboard'
+    if User.find_by(uid: gather_uid)
+      redirect_to '/user/dashboard'
+    else
+      User.create(user_params)
+      redirect_to '/user/register_state'
+    end
   end
 
   private
