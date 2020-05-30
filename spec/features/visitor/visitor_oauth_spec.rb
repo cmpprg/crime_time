@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "As a visitor" do
   before :each do
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:google] = nil
-    OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
+    OmniAuth.config.mock_auth[:google_oauth2] = nil
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
         "uid"=>"12345",
         "info"=>
         {"email"=>"michael.g.scott@example.com",
@@ -13,6 +13,8 @@ RSpec.describe "As a visitor" do
     })
   end
   it "I can log in with Google" do
+    visit "/"
+    click_on 'Login with Google'
     user = User.last
 
     expect(user.uid).to eq("12345")
