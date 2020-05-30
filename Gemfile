@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
+gem 'json'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
@@ -18,9 +19,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'launchy'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'pry'
-  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
@@ -28,7 +27,8 @@ group :development, :test do
 end
 
 group :test do
-
+  gem 'capybara'
+  gem 'shoulda-matchers'
 end
 
 group :development do
