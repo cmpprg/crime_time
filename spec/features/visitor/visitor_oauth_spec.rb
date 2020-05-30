@@ -21,5 +21,7 @@ RSpec.describe "As a visitor" do
     expect(user.email).to eq("michael.g.scott@example.com")
     expect(user.first_name).to eq("Michael")
     expect(user.last_name).to eq("Scott")
+
+    expect(current_path).to eq('/user/dashboard')
   end
 end

@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
       last_name: request.env["omniauth.auth"]["info"]["last_name"],
       email: request.env["omniauth.auth"]["info"]["email"]
     })
-    redirect_to '/'
+    redirect_to '/user/dashboard'
   end
 end
