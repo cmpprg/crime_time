@@ -32,14 +32,12 @@ class SessionsController < ApplicationController
 
   def create_and_login_new_user
     user = User.create(user_params)
-    login(user)
-    redirect(user)
+    login_and_redirect(user)
   end
 
   def login_registered_user
     user = User.find_by(uid: gather_uid)
-    login(user)
-    redirect(user)
+    login_and_redirect(user)
   end
 
   def does_user_exist
@@ -53,5 +51,10 @@ class SessionsController < ApplicationController
   def redirect(user)
     redirect_to "/user/register_state/#{user.id}/edit" unless user.has_state?
     redirect_to '/user/dashboard' if user.has_state?
+  end
+
+  def login_and_redirect(user)
+    login(user)
+    redirect(user)
   end
 end
