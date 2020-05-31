@@ -11,6 +11,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = "You have left. Goodbye!"
+    redirect_to "/"
+  end
+
   private
 
   def user_params
