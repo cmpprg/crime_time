@@ -1,24 +1,16 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by(uid: gather_uid)
-    if user
-      session[:user_id] = user.id
-      redirect_to '/user/dashboard'
-    else
-      new_user = User.create(user_params)
-      session[:user_id] = new_user.id
-      redirect_to "/user/register_state/#{new_user.id}/edit"
-    end
+    does_user_exist ? login_registered_user : create_and_login_new_user
   end
 
   private
 
   def user_params
     {
-    uid: gather_uid,
-    first_name: gather_first_name,
-    last_name: gather_last_name,
-    email: gather_email
+      uid: gather_uid,
+      first_name: gather_first_name,
+      last_name: gather_last_name,
+      email: gather_email
     }
   end
 
@@ -36,5 +28,30 @@ class SessionsController < ApplicationController
 
   def gather_email
     request.env["omniauth.auth"]["info"]["email"]
+  end
+
+  def create_and_login_new_user
+    user = User.create(user_params)
+    login(user)
+    redirect(user)
+  end
+
+  def login_registered_user
+    user = User.find_by(uid: gather_uid)
+    login(user)
+    redirect(user)
+  end
+
+  def does_user_exist
+    User.exists?(uid: gather_uid)
+  end
+
+  def login(user)
+    session[:user_id] = user.id
+  end
+
+  def redirect(user)
+    redirect_to "/user/register_state/#{user.id}/edit" unless user.has_state?
+    redirect_to '/user/dashboard' if user.has_state?
   end
 end
