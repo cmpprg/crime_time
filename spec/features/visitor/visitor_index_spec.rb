@@ -9,7 +9,7 @@ RSpec.describe 'As a Visitor' do
 
     within('.national-stats') do
       expect(page).to have_content('National Stats:')
-      expect(page).to have_css('.aggrivated-assault')
+      expect(page).to have_css('.aggravated-assault')
       expect(page).to have_css('.homicide')
       expect(page).to have_css('.rape')
       expect(page).to have_css('.property-crime')
