@@ -74,5 +74,21 @@ RSpec.describe "As a user" do
       end
     end
 
+    it "then i see a button called 'Compare' that redirects me to that page" do
+      visit user_dashboard_path
+
+      click_on 'Compare'
+
+      expect(page).to have_current_path('/user/compare')
+    end
+
+    it "then i see a button called 'Search' that redirects me to that page" do
+      visit user_dashboard_path
+
+      click_on 'Search'
+
+      expect(page).to have_current_path('/user/search')
+    end
+
   end
 end
