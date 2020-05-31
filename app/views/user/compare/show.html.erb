@@ -1,12 +1,12 @@
 <section class='state-1'>
-  <%= select_tag :state, options_for_select(us_states), class: 'state' %>
+  <%= select_tag :state, options_for_select(us_states), class: 'state', id: 'state1' %>
 </section>
 <section class='state-2'>
-  <%= select_tag :state, options_for_select(us_states), class: 'state' %>
+  <%= select_tag :state, options_for_select(us_states), class: 'state', id: 'state2' %>
 </section>
 <!-- Compare button will need a listener to display both stat windows for each state -->
 <section>
-  <%=  link_to "Compare", "/user/compare", role: "button", class: "btn btn-outline-primary" %>
+  <button type="button" class="btn btn-outline-primary" id="compare-button">Compare</button>
 </section>
 <!-- Tables should be empty until we click compare to display them, need to learned AJAX -->
 
