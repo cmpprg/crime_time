@@ -16,7 +16,7 @@
         <form class="form-inline">
           <button class="btn btn-outline-primary" type="button">Search</button>
           <div style="padding-left: 10px;">
-            <button class="btn btn-outline-primary" type="button">Compare</button>
+            <%= link_to "Compare", "/user/compare", role: "button", class: "btn btn-outline-primary" %>
           </div>
           <div style="padding-left: 10px;">
             <%= link_to "Leave", "/logout", method: :delete, role: "button", class: "btn btn-outline-danger" %>
