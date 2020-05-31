@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">Hi <%= current_user.first_name %></a>
+        <form class="form-inline">
+          <button class="btn btn-outline-primary" type="button">Search</button>
+          <div style="padding-left: 10px;">
+            <button class="btn btn-outline-primary" type="button">Compare</button>
+          </div>
+          <div style="padding-left: 10px;">
+            <%= link_to "Leave", "/logout", method: :delete, role: "button", class: "btn btn-outline-danger" %>
+          </div>
+        </form>
+      </nav>
+    <% end %>
+
+    <% flash.each do |name, msg| %>
+      <div class= "<%=name%>-flash">
+        <p><%= msg %></p>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
