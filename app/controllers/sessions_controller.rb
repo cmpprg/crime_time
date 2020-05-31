@@ -4,9 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    flash[:success] = "You have left. Goodbye!"
-    redirect_to "/"
+    logout_and_flash
+    redirect
   end
 
   private
@@ -54,13 +53,19 @@ class SessionsController < ApplicationController
     session[:user_id] = user.id
   end
 
-  def redirect(user)
+  def redirect(user = nil)
     redirect_to "/user/register_state/#{user.id}/edit" unless user.has_state?
     redirect_to '/user/dashboard' if user.has_state?
+    redirect_to '/' if session[:user_id] == nil
   end
 
   def login_and_redirect(user)
     login(user)
     redirect(user)
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:success] = "You have left. Goodbye!"
   end
 end
