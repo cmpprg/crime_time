@@ -14,7 +14,7 @@
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="/">Hi <%= current_user.first_name %></a>
         <form class="form-inline">
-          <%= link_to "Search", "/user/search", role: "button", class: "btn btn-outline-success" %>
+          <%= link_to "Search", "/user/search", role: "button", class: "btn btn-outline-success" unless search_path? %>
           <div style="padding-left: 10px;">
             <%= link_to "Compare", "/user/compare", role: "button", class: "btn btn-outline-primary" unless compare_path? %>
           </div>
