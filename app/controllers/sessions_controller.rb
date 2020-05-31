@@ -3,6 +3,12 @@ class SessionsController < ApplicationController
     does_user_exist ? login_registered_user : create_and_login_new_user
   end
 
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = "You have left. Goodbye!"
+    redirect_to "/"
+  end
+
   private
 
   def user_params
