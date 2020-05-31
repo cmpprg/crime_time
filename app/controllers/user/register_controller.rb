@@ -1,4 +1,4 @@
-class User::RegisterController < ApplicationController
+class User::RegisterController < User::BaseController
   def edit; end
 
   def update
