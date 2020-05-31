@@ -1,0 +1,91 @@
+<section class='state-1'>
+  <%= select_tag :state, options_for_select(us_states), class: 'state' %>
+</section>
+<section class='state-2'>
+  <%= select_tag :state, options_for_select(us_states), class: 'state' %>
+</section>
+<!-- Compare button will need a listener to display both stat windows for each state -->
+<section>
+  <%=  link_to "Compare", "/user/compare", role: "button", class: "btn btn-outline-primary" %>
+</section>
+<!-- Tables should be empty until we click compare to display them, need to learned AJAX -->
+
+<table class='state-1-table'>
+<h2><strong>Stats:</strong></h2>
+  <tr class='state-headers'>
+    <th>Crime</th>
+    <th>Total Occurrence</th>
+    <th>Percent Against State's Total Crimes</th>
+    <th>Percent Against National Occurrence</th>
+  </tr>
+  <tr class="aggravated-assault">
+    <td>Aggravated Assault</td>
+    <td>500</td>
+    <td>1%</td>
+    <td>10%</td>
+  </tr>
+  <tr class="homicide">
+    <td>Homicide</td>
+    <td>5000</td>
+    <td>5%</td>
+    <td>50%</td>
+  </tr>
+  <tr class="rape">
+    <td>Rape</td>
+    <td>85</td>
+    <td>0.1%</td>
+    <td>1%</td>
+  </tr>
+  <tr class="property-crime">
+    <td>Property Crime</td>
+    <td>450</td>
+    <td>0.5%</td>
+    <td>5%</td>
+  </tr>
+  <tr class="arson">
+    <td>Arson</td>
+    <td>330</td>
+    <td>0.4%</td>
+    <td>4%</td>
+  </tr>
+</table>
+
+<table class='state-2-table'>
+<h2><strong>Stats:</strong></h2>
+  <tr class='state-headers'>
+    <th>Crime</th>
+    <th>Total Occurrence</th>
+    <th>Percent Against State's Total Crimes</th>
+    <th>Percent Against National Occurrence</th>
+  </tr>
+  <tr class="aggravated-assault">
+    <td>Aggravated Assault</td>
+    <td>500</td>
+    <td>1%</td>
+    <td>10%</td>
+  </tr>
+  <tr class="homicide">
+    <td>Homicide</td>
+    <td>5000</td>
+    <td>5%</td>
+    <td>50%</td>
+  </tr>
+  <tr class="rape">
+    <td>Rape</td>
+    <td>85</td>
+    <td>0.1%</td>
+    <td>1%</td>
+  </tr>
+  <tr class="property-crime">
+    <td>Property Crime</td>
+    <td>450</td>
+    <td>0.5%</td>
+    <td>5%</td>
+  </tr>
+  <tr class="arson">
+    <td>Arson</td>
+    <td>330</td>
+    <td>0.4%</td>
+    <td>4%</td>
+  </tr>
+</table>
