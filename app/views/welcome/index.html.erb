@@ -1,86 +1,96 @@
-<h1> Welcome To Crime Time! </h1>
-<section>
-  <%= link_to "Login with Google", google_login_path  %>
+<h1 class="text-center p-4"><strong>Welcome To Crime Time!</strong></h1>
+<section class="text-center">
+  <%= link_to "Login with Google", google_login_path, class: "btn btn-lg btn-outline-success" %>
 </section></br>
 
-<table class='national-stats'>
-<h2><strong>National Stats:</strong></h2>
+<table class="table table-striped table-dark national-stats">
+<h2 class="text-center p-2"><strong>National Stats</strong></h2>
+<thead>
   <tr>
-    <th>Crime:</th>
-    <th>Total Occurrence</th>
-    <th>Percentage of Total Crimes</th>
+    <th scope="col-4">Crime</th>
+    <th scope="col-4">Total Occurrence</th>
+    <th scope="col-4">Percentage of Total Crimes</th>
   </tr>
+</thead>
+
+<tbody>
   <tr class="aggravated-assault">
-    <td>Aggravated Assault</td>
+    <th scope="row">Aggravated Assault</th>
     <td>500</td>
     <td>10%</td>
   </tr>
   <tr class="homicide">
-    <td>Homicide</td>
+    <th scope="row">Homicide</th>
     <td>5000</td>
     <td>50%</td>
   </tr>
   <tr class="rape">
-    <td>Rape</td>
+    <th scope="row">Rape</th>
     <td>85</td>
     <td>1%</td>
   </tr>
   <tr class="property-crime">
-    <td>Property Crime</td>
+    <th scope="row">Property Crime</th>
     <td>450</td>
     <td>5%</td>
   </tr>
   <tr class="arson">
-    <td>Arson</td>
+    <th scope="row">Arson</th>
     <td>330</td>
     <td>4%</td>
   </tr>
 </table>
+</tbody>
 
-<table class="top-ten">
-<h2><strong>Top Ten Most Wanted:</strong></h2>
-  <tr>
-    <th>Fugitive:</th>
-    <th>Last Known Location</th>
-  </tr>
-  <tr class='fugitive-one'>
-    <td>Travis 1</td>
-    <td>Your Mom's House</td>
-  </tr>
-  <tr class='fugitive-two'>
-    <td>Jerk 2</td>
-    <td>Over Yonder</td>
-  </tr>
-  <tr class='fugitive-three'>
-    <td>Butthead 3</td>
-    <td>Down the street</td>
-  </tr>
-  <tr class='fugitive-four'>
-    <td>Travis' Cousin 4</td>
-    <td>Right behind you</td>
-  </tr>
-  <tr class='fugitive-five'>
-    <td>Person 5</td>
-    <td>Inside the house</td>
-  </tr>
-  <tr class='fugitive-six'>
-    <td>Jordan</td>
-    <td>Arvada</td>
-  </tr>
-  <tr class='fugitive-seven'>
-    <td>Person 7</td>
-    <td>Under the bed</td>
-  </tr>
-  <tr class='fugitive-eight'>
-    <td>Arsonist 8</td>
-    <td>China</td>
-  </tr>
-  <tr class='fugitive-nine'>
-    <td>Generic Individual 9</td>
-    <td>Generic place</td>
-  </tr>
-  <tr class='fugitive-ten'>
-    <td>Number 10</td>
-    <td>Numeric Location</td>
-  </tr>
+<table class="table table-striped table-dark top-ten">
+<h2 class="text-center p-2"><strong>Top Ten Most Wanted</strong></h2>
+  <thead>
+    <tr>
+      <th scope="col-6">Fugitive</th>
+      <th scope="col-6">Last Known Location</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class='fugitive-one'>
+      <th scope="row">Travis 1</th>
+      <td>Your Mom's House</td>
+    </tr>
+    <tr class='fugitive-two'>
+      <th scope="row">Jerk 2</th>
+      <td>Over Yonder</td>
+    </tr>
+    <tr class='fugitive-three'>
+      <th scope="row">Butthead 3</th>
+      <td>Down the street</td>
+    </tr>
+    <tr class='fugitive-four'>
+      <th scope="row">Travis' Cousin 4</th>
+      <td>Right behind you</td>
+    </tr>
+    <tr class='fugitive-five'>
+      <th scope="row">Person 5</th>
+      <td>Inside the house</td>
+    </tr>
+    <tr class='fugitive-six'>
+      <th scope="row">Jordan</th>
+      <td>Arvada</td>
+    </tr>
+    <tr class='fugitive-seven'>
+      <th scope="row">Person 7</th>
+      <td>Under the bed</td>
+    </tr>
+    <tr class='fugitive-eight'>
+      <th scope="row">Arsonist 8</th>
+      <td>China</td>
+    </tr>
+    <tr class='fugitive-nine'>
+      <th scope="row">Generic Individual 9</th>
+      <td>Generic place</td>
+    </tr>
+    <tr class='fugitive-ten'>
+      <th scope="row">Number 10</th>
+      <td>Numeric Location</td>
+    </tr>
+  </tbody>
 </table></br>
