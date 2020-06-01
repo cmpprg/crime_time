@@ -1,17 +1,7 @@
 @import "bootstrap";
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+body {
+  margin: 4em;
+  // background: url("https://lh3.googleusercontent.com/proxy/df0swRK5oSQ5ZoRYq0ys_ELfyeG-AlDVKG8RxpLh2KAisWePVXnGjHjO6-HJu39E-v_IuxM7M5lZqxXH4qnWUzESuAuy4OsR2S04B_gc7uDDex5-35rm-fZUE8RMgIxAPA5W") fixed center; 
+  // color: rgb(240, 10, 10);
 }
