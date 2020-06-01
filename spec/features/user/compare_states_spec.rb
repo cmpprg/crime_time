@@ -14,7 +14,7 @@ RSpec.describe "As a User" do
     end
   end
 
-  it "I cannot select the same state for state 1 and 2" do
+  xit "I cannot select the same state for state 1 and 2" do
     visit user_compare_path
 
     within ('.state-1') do
