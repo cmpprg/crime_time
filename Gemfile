@@ -25,6 +25,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
   gem 'webmock'
 end
 

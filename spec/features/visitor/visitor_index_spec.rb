@@ -8,7 +8,7 @@ RSpec.describe 'As a Visitor' do
     expect(page).to have_link('Login with Google')
 
     within('.national-stats') do
-      expect(page).to have_content('National Stats:')
+      expect(page).to have_content('National Stats')
       expect(page).to have_css('.aggravated-assault')
       expect(page).to have_css('.homicide')
       expect(page).to have_css('.rape')
@@ -17,7 +17,7 @@ RSpec.describe 'As a Visitor' do
     end
 
     within('.top-ten') do
-      expect(page).to have_content('Top Ten Most Wanted:')
+      expect(page).to have_content('Top Ten Most Wanted')
       expect(page).to have_css('.fugitive-one')
       expect(page).to have_css('.fugitive-two')
       expect(page).to have_css('.fugitive-three')
