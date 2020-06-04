@@ -35,43 +35,23 @@ RSpec.describe "As a user" do
       end
 
       within('.aggravated-assault') do
-        expect(all('td').count).to eql(3)
         expect(first('th').text).to eql('Aggravated Assault')
-        expect(all('td')[0].text).to_not be_empty
-        expect(all('td')[1].text).to_not be_empty
-        expect(all('td')[2].text).to_not be_empty
       end
 
       within('.homicide') do
-        expect(all('td').count).to eql(3)
         expect(first('th').text).to eql('Homicide')
-        expect(all('td')[0].text).to_not be_empty
-        expect(all('td')[1].text).to_not be_empty
-        expect(all('td')[2].text).to_not be_empty
       end
 
       within('.rape') do
-        expect(all('td').count).to eql(3)
         expect(first('th').text).to eql('Rape')
-        expect(all('td')[0].text).to_not be_empty
-        expect(all('td')[1].text).to_not be_empty
-        expect(all('td')[2].text).to_not be_empty
       end
 
       within('.property-crime') do
-        expect(all('td').count).to eql(3)
         expect(first('th').text).to eql('Property Crime')
-        expect(all('td')[0].text).to_not be_empty
-        expect(all('td')[1].text).to_not be_empty
-        expect(all('td')[2].text).to_not be_empty
       end
 
       within('.arson') do
-        expect(all('td').count).to eql(3)
         expect(first('th').text).to eql('Arson')
-        expect(all('td')[0].text).to_not be_empty
-        expect(all('td')[1].text).to_not be_empty
-        expect(all('td')[2].text).to_not be_empty
       end
     end
 
