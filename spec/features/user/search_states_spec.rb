@@ -26,8 +26,6 @@ RSpec.describe "As a User" do
         expect(find('.state').value).to eq("CO")
       end
 
-      click_on "Search"
-
       expect(page).to have_css('.state-table')
       within ('.state-table') do
         expect(page).to have_css('.aggravated-assault')
